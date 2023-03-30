@@ -583,3 +583,5 @@ http_archive(
     urls = ["https://github.com/halide/Halide/releases/download/v15.0.0/Halide-15.0.0-x86-64-windows-d7651f4b32f9dbd764f243134001f7554378d62d.zip"],
     build_file = "@//third_party:halide.BUILD",
 )
+android_sdk_repository(name = "androidsdk", path = "/work/android/sdk", build_tools_version="30.0.3")
+android_ndk_repository(name = "androidndk", api_level=21, path = "/work/android/ndk/android-ndk-r21")
