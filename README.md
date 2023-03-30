@@ -1,4 +1,3 @@
-Clone from google/mediapipe by Chevy.
 
 ---
 layout: default
@@ -9,6 +8,7 @@ nav_order: 1
 ![MediaPipe](https://mediapipe.dev/images/mediapipe_small.png)
 
 --------------------------------------------------------------------------------
+## Clone from google/mediapipe by Chevy.
 
 ## Live ML anywhere
 
