@@ -1,10 +1,10 @@
+[Clone from google/mediapipe by CHevy.]
+
 ---
 layout: default
 title: Home
 nav_order: 1
 ---
-
-Clone from google/mediapipe by CHevy.
 
 ![MediaPipe](https://mediapipe.dev/images/mediapipe_small.png)
 
