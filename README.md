@@ -1,4 +1,4 @@
-[Clone from google/mediapipe by CHevy.]
+Clone from google/mediapipe by Chevy.
 
 ---
 layout: default
