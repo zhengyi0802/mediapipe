@@ -84,12 +84,17 @@ for app in ${apps}; do
     app_name=${app##*/}
     if [[ ${app_name} == "basic" ]]; then
       target_name="helloworld"
+    elif [[ ${app_name} == "handtracking_aar" ]]; then
+      target_name="handtracking"
     else
       target_name=${app_name}
     fi
     target="${app}:${target_name}"
-    bin="${bin_dir}/${app}/${target_name}.apk"
-
+    if [[ ${target_name} == "handtracking" ]]; then
+      bin="${bin_dir}/${app}/${target_name}.aar"
+    else
+      bin="${bin_dir}/${app}/${target_name}.apk"
+    fi
     echo "=== Target: ${target}"
 
     if [[ $install_only == false ]]; then
@@ -115,13 +120,18 @@ for app in ${apps}; do
         apks+=(${apk})
       done
     else
-      apk="${out_dir}/${target_name}.apk"
+      if [[ ${target_name} == "handtracking" ]]; then
+        apk="${out_dir}/${target_name}.aar"
+      else
+        apk="${out_dir}/${target_name}.apk"
+      fi
       if [[ $install_only == false ]]; then
         if [[ ${app_name} == "templatematchingcpu" ]]; then
           switch_to_opencv_4
         fi
         bazelisk "${bazel_flags[@]}"
         cp -f "${bin}" "${apk}"
+
         if [[ ${app_name} == "templatematchingcpu" ]]; then
           switch_to_opencv_3
         fi
