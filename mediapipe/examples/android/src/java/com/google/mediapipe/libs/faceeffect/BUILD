@@ -4,6 +4,9 @@ load("//mediapipe/java/com/google/mediapipe:mediapipe_aar.bzl", "mediapipe_aar")
 mediapipe_aar(
     name = "faceeffect",
     calculators = ["//mediapipe/graphs/face_effect:face_effect_gpu_deps"],
+    deps = [
+        "//mediapipe/modules/face_geometry/protos:face_geometry_java_proto_lite",
+    ],
     assets = [
         "//mediapipe/graphs/face_effect/data:axis.binarypb",
         "//mediapipe/graphs/face_effect/data:axis.pngblob",

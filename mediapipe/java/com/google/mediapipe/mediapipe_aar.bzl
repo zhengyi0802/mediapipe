@@ -48,6 +48,7 @@ def mediapipe_aar(
         srcs = [],
         gen_libmediapipe = True,
         calculators = [],
+        deps = [],
         assets = [],
         assets_dir = ""):
     """Generates MediaPipe android archive library.
@@ -118,7 +119,7 @@ EOF
                }),
         manifest = "AndroidManifest.xml",
         proguard_specs = ["//mediapipe/java/com/google/mediapipe/framework:proguard.pgcfg"],
-        deps = [
+        deps = deps + [
             ":" + name + "_jni_cc_lib",
             "//mediapipe/framework:calculator_java_proto_lite",
             "//mediapipe/framework:calculator_profile_java_proto_lite",
