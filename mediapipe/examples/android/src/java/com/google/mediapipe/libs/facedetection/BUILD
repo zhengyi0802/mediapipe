@@ -6,6 +6,7 @@ mediapipe_aar(
     calculators = ["//mediapipe/graphs/face_detection:mobile_calculators"],
     assets = [
         "//mediapipe/graphs/face_detection:face_detection_mobile_gpu.binarypb",
+        "//mediapipe/graphs/face_detection:face_detection_mobile_cpu.binarypb",
         "//mediapipe/modules/face_detection:face_detection_short_range.tflite",
     ],
 )
